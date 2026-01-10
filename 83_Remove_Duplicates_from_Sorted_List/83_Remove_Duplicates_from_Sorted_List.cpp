@@ -10,22 +10,22 @@ struct ListNode {
 // Step1
 // 方針1
 ListNode* deleteDuplicates(ListNode* head) {
-	ListNode* curr = head;
-	ListNode* next;
+	ListNode* node = head;
+	ListNode* node_next;
 
 	if (head != nullptr && head->next != nullptr) {
-		next = head->next;
+		node_next = head->next;
 	} else {
 		return nullptr;
 	}
 
-	while (next != nullptr) {
-		if (curr->val == next->val) {
-			next = next->next; //TODO: Delete this node
-			curr->next = next;
+	while (node_next != nullptr) {
+		if (node->val == node_next->val) {
+			node_next = node_next->next; //TODO: Delete this node
+  		node->next = node_next;
 		} else {
-		curr = curr->next;
-		next = next->next;
+		node = node->next;
+		node_next = node_next->next;
 		}
 	}
 	return head;
@@ -33,22 +33,22 @@ ListNode* deleteDuplicates(ListNode* head) {
 
 // 方針2
 ListNode* deleteDuplicates(ListNode* head) {
-	ListNode* curr = head;
-	ListNode* next;
+	ListNode* node = head;
+	ListNode* node_next;
 
 	if (head != nullptr && head->next != nullptr) {
-		next = head->next;
+		node_next = head->next;
 	} else {
 		return head;
 	}
 
-	while (next != nullptr) {
-		if (curr->val == next->val) {
-			next = next->next; //TODO: Delete this node
-			curr->next = next;
+	while (node_next != nullptr) {
+		if (node->val == node_next->val) {
+			node_next = node_next->next; //TODO: Delete this node
+			node->next = node_next;
 		} else {
-		curr = curr->next;
-		next = next->next;
+		node = node->next;
+		node_next = node_next->next;
 		}
 	}
 	return head;
@@ -56,15 +56,15 @@ ListNode* deleteDuplicates(ListNode* head) {
 
 // Step2
 ListNode* deleteDuplicates(ListNode* head) {
-	ListNode* curr = head;
+	ListNode* node = head;
 	
-	while (curr != nullptr && curr->next != nullptr) {
-		if (curr->val == curr->next->val) {
-			// ListNode* temp = curr->next;
-			curr->next = curr->next->next;
+	while (node != nullptr && node->next != nullptr) {
+		if (node->val == node->next->val) {
+			// ListNode* temp = node->next;
+			node->next = node->next->next;
 			// delete temp;
 		} else {
-			curr = curr->next;
+			node = node->next;
 		}
 	}
 	return head;
