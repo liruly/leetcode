@@ -22,7 +22,7 @@ ListNode* deleteDuplicates(ListNode* head) {
 	while (node_next != nullptr) {
 		if (node->val == node_next->val) {
 			node_next = node_next->next; //TODO: Delete this node
-  		node->next = node_next;
+			node->next = node_next;
 		} else {
 		node = node->next;
 		node_next = node_next->next;
