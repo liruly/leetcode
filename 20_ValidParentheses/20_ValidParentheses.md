@@ -78,11 +78,12 @@ public:
         for (char c : s) {
             if (match.count(c)) {
                 st.push(c);
+                continue;
             } else if (!st.empty() && match[st.top()] == c ) {
                 st.pop();
-            } else {
-                return false;
+                continue;
             }
+            return false;
         }
         return st.empty();
     }
