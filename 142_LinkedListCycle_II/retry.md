@@ -4,7 +4,7 @@
 
 ## Step1: 素直な解法(unordered_set) 5min 
 ```cpp
-#include <vector>
+#include <unordered_set>
 
 class Solution {
 public:
