@@ -91,8 +91,9 @@ public:
 
 ## Step3
 - 所要時間: 15min
-- 方針: 
-	- 
+- 方針: リファクタリング
+	- 初期化子リスト
+	- privateやエラーハンドリング等、防衛的プログラミング
 - コード
 ```cpp
 class KthLargest {
